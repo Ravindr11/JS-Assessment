@@ -14,27 +14,37 @@ const nfts = [];
 // NFT object using the parameters passed to it for its metadata, 
 // and store it in the variable above.
 function mintNFT (name, age, comic, pages) {
-    nft = {
+    const nft = {
         name : name,
         age : age,
         comic : comic,
         pages : pages
-    }
+    };
+
     nfts.push(nft);
 }
 
 // create a "loop" that will go through an "array" of NFT's
 // and print their metadata with console.log()
 function listNFTs () {
-    for (let i = 0; i < nft.length; i++) {
-        console.log(nft[i]);
+    for (let i = 0; i < nfts.length; i++) {
+        console.log("-- NFT", i+1, "--");
+        console.log("Name:", nfts[i].name);
+        console.log("Age :", nfts[i].age);
+        console.log("Comic:", nfts[i].comic);
+        console.log("Pages:", nfts[i].pages);
+        console.log();
     }
 }
 
 // print the total number of NFTs we have minted to the console
 function getTotalSupply() {
-
+    console.log("Total NFTs are:", nfts.length);
 }
 
 // call your functions below this line
-
+mintNFT("Ravinder", 21, "Spiderman", 150);
+mintNFT("Sheetal", 20, "Doremon", 175);
+mintNFT("Rithwika", 20, "Lovely", 200);
+listNFTs();
+getTotalSupply();
